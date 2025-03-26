@@ -21,10 +21,10 @@ public class GitHubDragDropTests {
         open("https://github.com/selenide/selenide");
 
         // выберите: Меню -> Solutions -> Enterprize
-        $(".HeaderMenu-nav").$$("ul.d-lg-flex list-style-none li").get(1).hover()
-                .$(byText("Enterprises").click();
+        $(".HeaderMenu-nav").$(byText("Solutions")).hover();
+        $$(".HeaderMenu-dropdown-link").findBy(text("Enterprises")).click();
         //Убедитесь, что загрузилась нужная страница
-        $(byTagAndText("h1","The AI-powered /n developer platform")).shouldBe(visible);
+        $("#hero-section-brand-heading").shouldHave(text("The AI-powered\ndeveloper platform"));
 
     }
     @Test

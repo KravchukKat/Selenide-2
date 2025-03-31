@@ -17,7 +17,7 @@ public class GitHubDragDropTests {
         Configuration.timeout = 5000; // default 4000
     }
     @Test
-    void GitHubPage() {
+    void gitHubPage() {
         // Открыть страницу репозитория Selenide
         open("https://github.com/selenide/selenide");
 
@@ -29,14 +29,14 @@ public class GitHubDragDropTests {
 
     }
     @Test
-    void DragDropActions() {
+    void dragDropActions() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
         $("#column-b").shouldHave(text("A"));
         $("#column-a").shouldHave(text("B"));
     }
     @Test
-    void DragDrop() {
+    void dragDrop() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("#column-a").dragAndDrop(DragAndDropOptions.to("#column-b"));
         $("#column-b").shouldHave(text("A"));
